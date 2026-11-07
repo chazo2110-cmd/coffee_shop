@@ -10,6 +10,11 @@ create table if not exists public.shop_settings (
  phone text not null default '',
  hours text not null default 'Đang cập nhật giờ mở cửa'
 );
+-- Run in Supabase SQL Editor. Existing shop data and RLS remain unchanged.
+-- Adding the column sets this shop's Page for existing and new settings rows.
+alter table public.shop_settings
+  add column if not exists messenger_url text not null default 'https://m.me/HarveyJettt';
+
 insert into public.shop_settings (id) values (1) on conflict do nothing;
 create table if not exists public.products (
  id uuid primary key default gen_random_uuid(),

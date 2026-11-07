@@ -42,3 +42,9 @@ Các danh mục cố định: cà phê, kem, ăn vặt. Admin quản lý sản p
 ## Triển khai
 
 Triển khai Next.js trên Vercel hoặc máy chủ Node.js, cấu hình hai biến trong `.env.example`. Trong Supabase Auth, đặt Site URL thành domain triển khai. Cho phép truy cập domain Supabase dự án, images.unsplash.com (ảnh minh họa), font được đóng gói cục bộ qua Fontsource, không phụ thuộc Google Fonts. Có thể dùng ảnh riêng qua Supabase Storage thay ảnh minh họa. Cấu hình cloud draft không tự triển khai website.
+
+## Chat với nhân viên qua Facebook Page
+
+Nút chat nổi mở khung lời chào và liên kết Messenger của Page HarveyJettt (`https://m.me/HarveyJettt`). Khách gửi và nhận tin trong Messenger; nhân viên trả lời qua hộp thư Page/Meta Business Suite. Website không nhúng hội thoại, không nhận/lưu tin nhắn và không hiển thị trạng thái trực tuyến giả. Không cần Facebook App ID hoặc access token. Page cần bật tính năng nhắn tin và nhân viên phải có quyền truy cập hộp thư.
+
+Với database đã tạo trước bản cập nhật này, chạy `supabase/migrations/20261108_messenger.sql` trong Supabase SQL Editor một lần. Với dự án mới, `schema.sql` đã bao gồm cột này. Sau đó, tại `/admin` → **Thông tin shop** → **Facebook Page / Messenger**, nhập link Page hoặc `https://m.me/tenpage` và lưu; để trống để ẩn nút chat. Các thay đổi áp dụng khi tải lại trang chủ. Trước khi chạy migration, website vẫn dùng Page mặc định và các trường thông tin cũ vẫn lưu được.

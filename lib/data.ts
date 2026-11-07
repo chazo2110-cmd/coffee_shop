@@ -1,6 +1,6 @@
 export const categories = [{id:'coffee',name:'Cà phê',en:'Coffee',number:'01'}, {id:'icecream',name:'Kem',en:'Ice cream',number:'02'}, {id:'snacks',name:'Ăn vặt',en:'Little bites',number:'03'}];
 export type Product = {id:string;name:string;description:string;price:number;image_url:string;category:string;available:boolean;sort_order:number};
-export type Shop = {id:number;name:string;tagline:string;address:string;phone:string;hours:string};
+export type Shop = {id:number;name:string;tagline:string;address:string;phone:string;hours:string;messenger_url?:string};
 export const defaultShop:Shop = {id:1,name:'CHẠM',tagline:'Một chút cà phê. Một chút thảnh thơi.',address:'Đang cập nhật địa chỉ',phone:'',hours:'Đang cập nhật giờ mở cửa'};
 export const money = (value:number) => new Intl.NumberFormat('vi-VN').format(value) + 'đ';
 export const demoProducts:Product[] = [
